@@ -60,7 +60,7 @@ public class Exercise2 {
                 Assert.assertFalse(driver.getCurrentUrl().contains("success"));
 
             }catch(AssertionError error) {
-                System.out.println("Invalid Account");
+                System.out.println("Invalid account");
             }
         }
     }
