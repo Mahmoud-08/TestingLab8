@@ -6,16 +6,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.testng.Assert;
 
 import java.time.Duration;
 
-/*
-Mahmoud Mohamed Abdelglil
-2022170924
-*/
+/*Mahmoud Abdelglil
+ 2022170924 */
 
 public class Exercise2 {
     WebDriver driver;
@@ -28,7 +25,6 @@ public class Exercise2 {
             options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
             driver = new ChromeDriver(options);
         } else {
-            WebDriverManager.edgedriver().setup(); // add this
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
             driver = new EdgeDriver(options);
@@ -43,8 +39,8 @@ public class Exercise2 {
     @DataProvider(name = "loginData")
     public static Object[][] loginData() {
         return new Object[][] {
-                { "test@mail.com", "123", false},
-                { "test@mail.com", "152", true}
+                { "test@mail.com", "123", false },
+                { "test@mail.com", "152", true  }
         };
     }
 
@@ -54,7 +50,7 @@ public class Exercise2 {
         driver.findElement(By.id("passwd")).sendKeys(pass);
         driver.findElement(By.id("SubmitLogin")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.urlContains("success"));
 
         if (isValid) {
