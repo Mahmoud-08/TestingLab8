@@ -14,7 +14,7 @@ public class Exercise1 {
     public void openWebSite() {
         driver = new ChromeDriver();
         System.out.println("Before Test: Opening Website");
-        driver.get("https://ar.shein.com/");
+        driver.get("https://www.temu.com/");
     }
 
     @Test(priority = 1)
