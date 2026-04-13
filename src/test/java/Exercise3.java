@@ -61,6 +61,6 @@ public class Exercise3 {
 
     @AfterGroups("Regression")
     public void endRegression() {
-        System.out.println("Finished regression group execution.");
+        System.out.println("Finished regression group Execution.");
     }
 }
